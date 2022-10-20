@@ -1,0 +1,10 @@
+---
+BasedOnStyle: LLVM
+AlignArrayOfStructures: Left
+AlignConsecutiveAssignments: AcrossComments
+AlignConsecutiveDeclarations: AcrossComments
+AlignConsecutiveMacros: AcrossComments
+QualifierAlignment: Left
+SpacesInParentheses: true
+SpacesInSquareBrackets: true
+TabWidth: 2
