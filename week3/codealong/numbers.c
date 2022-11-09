@@ -7,7 +7,7 @@ int main( void ) {
 
   for ( int i = 0; i < 7; i++ ) {
     if ( numbers[ i ] == userInput ) {
-      printf( "Found\n" );
+      printf( "Found at index: %d\n", i );
       return 0;
     }
   }
