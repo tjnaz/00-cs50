@@ -6,6 +6,6 @@ AlignConsecutiveDeclarations: AcrossComments
 AlignConsecutiveMacros: AcrossComments
 IndentWidth: 2
 QualifierAlignment: Left
-SpacesInParentheses: true
-SpacesInSquareBrackets: true
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
 TabWidth: 2
