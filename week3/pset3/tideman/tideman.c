@@ -73,11 +73,11 @@ int main(int argc, string argv[]) {
         return 3;
       }
     }
-    // record_preferences(ranks);
-
     for (int k = 0; k < candidate_count; k++) {
       printf("Ranks[%d]: %s\n", k, candidates[ranks[k]]);
     }
+    // record_preferences(ranks);
+
     printf("\n");
   }
 
