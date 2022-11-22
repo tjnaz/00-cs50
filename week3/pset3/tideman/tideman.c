@@ -73,9 +73,10 @@ int main(int argc, string argv[]) {
         return 3;
       }
     }
-    for (int k = 0; k < candidate_count; k++) {
-      printf("Ranks[%d]: %s\n", k, candidates[ranks[k]]);
-    }
+    // for (int k = 0; k < candidate_count; k++) {
+    //   printf("Ranks[%d]: Candidate[%d]\n", k, ranks[k]);
+    // }
+
     // record_preferences(ranks);
 
     printf("\n");
@@ -93,6 +94,11 @@ bool vote(int rank, string name, int ranks[]) {
   // TODO
   for (int i = 0; i < candidate_count; i++) {
     if (strcmp(name, candidates[i]) == 0) {
+      for (int j = candidate_count; j >= 0; j--) {
+        if (i == ranks[j]) {
+          return false;
+        }
+      }
       ranks[rank] = i;
       return true;
     }
