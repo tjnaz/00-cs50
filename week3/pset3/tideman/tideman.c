@@ -77,8 +77,14 @@ int main(int argc, string argv[]) {
     //   printf("Ranks[%d]: Candidate[%d]\n", k, ranks[k]);
     // }
 
-    // record_preferences(ranks);
+    record_preferences(ranks);
 
+    printf("\n");
+  }
+  for (int z = 0; z < candidate_count; z++) {
+    for (int y = 0; y < candidate_count; y++) {
+      printf("[%d]", preferences[z][y]);
+    }
     printf("\n");
   }
 
@@ -92,12 +98,15 @@ int main(int argc, string argv[]) {
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[]) {
   // TODO
+  // for (int l = 0; l < candidate_count; l++) {
+  //   printf("[%d]", ranks[l]);
+  // }
   for (int i = 0; i < candidate_count; i++) {
     if (strcmp(name, candidates[i]) == 0) {
       for (int j = candidate_count; j >= 0; j--) {
-        if (i == ranks[j]) {
-          return false;
-        }
+        // if (i == ranks[j]) {
+        //   return false;
+        // }
       }
       ranks[rank] = i;
       return true;
@@ -109,6 +118,20 @@ bool vote(int rank, string name, int ranks[]) {
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[]) {
   // TODO
+  int candidate_rank[candidate_count];
+  for (int i = 0; i < candidate_count; i++) {
+    candidate_rank[ranks[i]] = i;
+  }
+
+  for (int j = 0; j < candidate_count; j++) {
+    for (int k = 0; k < candidate_count; k++) {
+      if (j == k) {
+        preferences[j][k] = 0;
+      } else if (candidate_rank[j] < candidate_rank[k]) {
+        preferences[j][k] += 1;
+      }
+    }
+  }
   return;
 }
 
